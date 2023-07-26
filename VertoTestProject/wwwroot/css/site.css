@@ -1,0 +1,38 @@
+﻿@import 'foundation.css';
+
+@include foundation-xy-grid-classes(
+/* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  */
+);
+
+.outline {
+    outline: 2px dashed blue;
+}
+
+div {
+    outline: 2px dashed blue;
+}
+
+header {
+    background-color: rgba(230,231,232,255);
+}
+
+footer {
+    background-color: rgba(230,231,232,255);
+}
+
+input {
+    display: inline-block;
+}
+
+.header-image {
+    padding-top: 1%;
+}
