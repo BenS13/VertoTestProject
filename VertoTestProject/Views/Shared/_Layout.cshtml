@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - VertoTest</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Define a header to be used on all pages -->
+    <header>
+        <!--Define a vertical stack-->
+        <div class="grid-y">
+            <!--First row in vertical stack for the logo-->
+            <div class="grid-x grid-margin-x">
+                <a class="cell large-auto large-offset-2 header-image" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/header-logo.png">
+                </a>
+            </div> <br>
+
+            <!--2nd row in vertical stack holds links to pages and search input-->
+            <div class="grid-x grid-margin-x">
+
+                <a class="cell medium-1 large-1 large-offset-2" asp-area="" asp-controller="" asp-action="">Our Products</a>
+                <a class="cell medium-1 large-1" asp-area="" asp-controller="" asp-action="">Where to Buy</a>
+                <a class="cell medium-1 large-1" asp-area="" asp-controller="" asp-action="">News & Reviews</a>
+                <a class="cell medium-1 large-1" asp-area="" asp-controller="" asp-action="">Help & Support</a>
+                <a class="cell medium-1 large-1" asp-area="" asp-controller="" asp-action="">My Opticron</a>
+
+                <div class="cell medium-1 large-1"></div>
+
+                <input class="cell  medium-1 large-1" type="text" placeholder="Search..">
+
+                <div class="cell medium-1 large-3"></div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <!--Render the main content from the views ect. -->
+    <div>
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Define a footer to be used on all pages -->
+    <footer>
+        <!--Define a horizontal grid-->
+        <div class="grid-x grid-padding-x">
+            <!--1st colum in grid holds Company Address ect-->
+            <div class="cell large-6 large-offset-2 grid-y grid-padding-y">
+                <div class="cell ">Opticron Unit 21, Titan Court, Laporte Way, Luton, Bedfordshire, LU4 8EF, UK</div>
+                <div class="cell ">Site map / Terms / Privacy Policy / Site by Verto</div>
+            </div>
+            <!--2nd colunm in grid holds Phone number, social media links ect-->
+            <div class="cell large-2 grid-y grid-padding-y">
+                <div class="cell ">Call 01582 726522</div>
+                <div class="cell ">Social Media Buttons</div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

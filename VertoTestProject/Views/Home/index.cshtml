@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--Define a vertical grid for the content-->
+<!--Each row will hold a section of content-->
+<div class="grid-y">
+    <!--1st Row will hold the main splash image-->
+    <!--Apply full to stretch image-->
+    <div class="grid-container full">
+        <div class="grid-x" style="padding-bottom: 1%;">
+            <img src="~/images/bigimage.jpg">
+        </div>
+    </div>
+    <!--Apply a container to control width of rest of content-->
+    <div class="grid-container" style="max-width :70%;">
+        <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
+        <div class="grid-x  grid-margin-x" >
+            <div class="cell auto">
+                <div class="">Title</div>
+                <div class="">Image</div>
+                <div class="">Button</div>
+            </div>
+            <div class="cell auto">
+                <div class="">Title2</div>
+                <div class="">Image2</div>
+                <div class="">Button2</div>
+            </div>
+
+            <div class="cell auto">
+                <div class="">Title3</div>
+                <div class="">Image3</div>
+                <div class="">Button3</div>
+            </div>
+        </div>
+    </div>
+</div>
