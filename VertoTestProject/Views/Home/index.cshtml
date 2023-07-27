@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IList<VertoTestProject.Models.Content>;
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -15,23 +16,29 @@
     <!--Apply a container to control width of rest of content-->
     <div class="grid-container" style="max-width :70%;">
         <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
-        <div class="grid-x  grid-margin-x">
-            <div class="cell auto">
-                <div class="">Title</div>
-                <div class="">Image</div>
-                <div class="">Button</div>
-            </div>
-            <div class="cell auto">
-                <div class="">Title2</div>
-                <div class="">Image2</div>
-                <div class="">Button2</div>
-            </div>
+        
+        <!--Display table of contents to check service works-->
+        
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">ImageURL</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var content in Model)
+                {
+                    <tr>
+                        <td>@content.Title</td>
+                        <td>@content.ImageURL</td>
+                        <td>@content.Description</td>
+                    </tr>
 
-            <div class="cell auto">
-                <div class="">Title3</div>
-                <div class="">Image3</div>
-                <div class="">Button3</div>
-            </div>
-        </div>
+                }
+            </tbody>
+        </table>
+
     </div>
 </div>
