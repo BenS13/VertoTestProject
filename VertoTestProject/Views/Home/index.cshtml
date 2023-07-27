@@ -59,56 +59,66 @@
             </tbody>
         </table>
         </div>-->
-
-        <div class="grid-x">
-        <table class="">
-            <thead>
-                <tr>
-                    <th scope="col">Special Offers - 3rd Row of Content</th>
-                    <th scope="col">ImageURL</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var content in Model)
-                {
-                    @if (content.Title == "Special Offers")
-                    {
-                        <tr>
-                            <td>@content.Title</td>
-                            <td>@content.ImageURL</td>
-                            <td>@content.Description</td>
-                        </tr>
-                    }
-                }
-            </tbody>
-        </table>
+        <div class="gird-y background-grey" style="padding-bottom: 1%">
+        
+         
+        <div class="cell auto large-offset-5">
+             Special Offers
         </div>
 
-        <div class="grid-x">
-        <table class="">
-            <thead>
-                <tr>
-                    <th scope="col">Product Categories - 3rd Row of Content</th>
-                    <th scope="col">ImageURL</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var content in Model)
+         <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+            @foreach (var offer in Model)
+            {
+                @if (offer.Title == "Special Offers")
                 {
-                    @if (content.Title == "Product Categories")
-                    {
-                        <tr>
-                            <td>@content.Title</td>
-                            <td>@content.ImageURL</td>
-                            <td>@content.Description</td>
-                        </tr>
-                    }
+                    <div class="cell auto">
+                        
+                        <div class="">@offer.ImageURL</div>
+                        <div class="">@offer.Description</div>
+                        
+                    </div>
                 }
-            </tbody>
-        </table>
+
+            }
         </div>
+
+        <div class="cell large-offset-5">
+                <a class="button" asp-area="" asp-controller="" asp-action="">All Offers</a>
+        </div>
+
+        </div>
+
+
+        <div class="gird-y" style="padding-bottom: 1%">
+
+
+            <div class="cell auto large-offset-5">
+                Product Categories
+            </div>
+
+            <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+                @foreach (var category in Model)
+                {
+                    @if (category.Title == "Product Categories")
+                    {
+                        <div class="cell auto">
+
+                            <div class="">@category.ImageURL</div>
+                            <div class="">@category.Description</div>
+
+                        </div>
+                    }
+
+                }
+            </div>
+
+            
+
+        </div>
+
+
+       
+        
 
     </div>
 </div>
