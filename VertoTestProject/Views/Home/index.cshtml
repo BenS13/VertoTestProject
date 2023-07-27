@@ -13,12 +13,9 @@
             <img src="~/images/bigimage.jpg">
         </div>
     </div>
-    <!--Apply a container to control width of rest of content-->
+    <!--Apply a container to control width of content after big image-->
     <div class="grid-container" style="max-width :1280px;">
         <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
-        
-        <!--Display table of contents to check service works-->
-
         <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
             @foreach (var item in Model)
             {
@@ -34,61 +31,36 @@
                 
             }
         </div>
-        <!--
-        <div class="grid-x">
-        <table class="">
-            <thead>
-                <tr>
-                    <th scope="col">Title - 2nd Row of Content</th>
-                    <th scope="col">ImageURL</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                foreach (var content in Model)
-                {
-                    if (content.Title != "Special Offers" & content.Title != "Product Categories")
-                    {
-                        <tr>
-                            <td>content.Title</td>
-                            <td>content.ImageURL</td>
-                            <td>content.Description</td>
-                        </tr>
-                    }
-                }
-            </tbody>
-        </table>
-        </div>-->
+        
+        <!--3rd Row holds special offer deals-->
         <div class="gird-y background-grey" style="padding-bottom: 1%">
         
-         
-        <div class="cell auto large-offset-5">
-             Special Offers
-        </div>
+            <div class="cell auto large-offset-5">
+                Special Offers
+            </div>
 
-         <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
-            @foreach (var offer in Model)
-            {
-                @if (offer.Title == "Special Offers")
+            <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+                @foreach (var offer in Model)
                 {
-                    <div class="cell auto">
+                    @if (offer.Title == "Special Offers")
+                    {
+                        <div class="cell auto">
                         
-                        <div class="">@offer.ImageURL</div>
-                        <div class="">@offer.Description</div>
+                            <div class="">@offer.ImageURL</div>
+                            <div class="">@offer.Description</div>
                         
-                    </div>
+                        </div>
+                    }
+
                 }
+            </div>
 
-            }
-        </div>
-
-        <div class="cell large-offset-5">
+            <div class="cell large-offset-5">
                 <a class="button" asp-area="" asp-controller="" asp-action="">All Offers</a>
+            </div>
         </div>
 
-        </div>
-
-
+        <!--4th Row holds prdocut categories-->
         <div class="gird-y" style="padding-bottom: 1%">
 
 
