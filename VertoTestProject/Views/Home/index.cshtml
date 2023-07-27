@@ -8,21 +8,62 @@
 <div class="grid-y">
     <!--1st Row will hold the main splash image-->
     <!--Apply full to stretch image-->
-    <div class="grid-container full">
+    <div class="grid-container full" style="max-width: 100%">
         <div class="grid-x" style="padding-bottom: 1%;">
             <img src="~/images/bigimage.jpg">
         </div>
     </div>
     <!--Apply a container to control width of rest of content-->
-    <div class="grid-container" style="max-width :70%;">
+    <div class="grid-container" style="max-width :1280px;">
         <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
         
         <!--Display table of contents to check service works-->
-        
-        <table class="table mt-5">
+
+        <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+            @foreach (var item in Model)
+            {
+                @if (item.Title != "Special Offers" & item.Title != "Product Categories")
+                {
+                    <div class="cell auto">
+                        <div class="">@item.Title</div>
+                        <div class="">@item.ImageURL</div>
+                        <div class="">@item.Description</div>
+                    </div>
+                }
+                
+            }
+        </div>
+        <!--
+        <div class="grid-x">
+        <table class="">
             <thead>
                 <tr>
-                    <th scope="col">Title</th>
+                    <th scope="col">Title - 2nd Row of Content</th>
+                    <th scope="col">ImageURL</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                foreach (var content in Model)
+                {
+                    if (content.Title != "Special Offers" & content.Title != "Product Categories")
+                    {
+                        <tr>
+                            <td>content.Title</td>
+                            <td>content.ImageURL</td>
+                            <td>content.Description</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        </div>-->
+
+        <div class="grid-x">
+        <table class="">
+            <thead>
+                <tr>
+                    <th scope="col">Special Offers - 3rd Row of Content</th>
                     <th scope="col">ImageURL</th>
                     <th scope="col">Description</th>
                 </tr>
@@ -30,15 +71,43 @@
             <tbody>
                 @foreach (var content in Model)
                 {
-                    <tr>
-                        <td>@content.Title</td>
-                        <td>@content.ImageURL</td>
-                        <td>@content.Description</td>
-                    </tr>
-
+                    @if (content.Title == "Special Offers")
+                    {
+                        <tr>
+                            <td>@content.Title</td>
+                            <td>@content.ImageURL</td>
+                            <td>@content.Description</td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
+        </div>
+
+        <div class="grid-x">
+        <table class="">
+            <thead>
+                <tr>
+                    <th scope="col">Product Categories - 3rd Row of Content</th>
+                    <th scope="col">ImageURL</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var content in Model)
+                {
+                    @if (content.Title == "Product Categories")
+                    {
+                        <tr>
+                            <td>@content.Title</td>
+                            <td>@content.ImageURL</td>
+                            <td>@content.Description</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        </div>
 
     </div>
 </div>

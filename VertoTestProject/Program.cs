@@ -15,11 +15,12 @@ builder.Services.AddScoped<ContentService>();
 
 var app = builder.Build();
 
+//Run the seeding for the database on app startup
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    SeedData.Initialize(services);
+    SeedData.Initialize(services);//Seed the database with data
 }
 
 //Allow css files to be applied
