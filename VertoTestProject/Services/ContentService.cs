@@ -17,6 +17,7 @@ namespace VertoTestProject.Services
             _context = context;
         }
 
+        //Method to retrive all content from database
         public IList<Content> GetContent()
         {
             if(_context.Contents != null)//If content exists in the database
