@@ -1,7 +1,23 @@
-﻿@{
+﻿@model VertoTestProject.Models.Content;
+@{
     ViewData["Title"] = "Admin - Edit";
 }
 
-<div class="text-center">
-    Compnent id @ViewData["id"]
+<div class="grid-y">
+    <!--Current data inside selected compontent-->
+    <div class="grid-container" style="max-width :1125px; padding: 1%">
+        <div class="text-center" style="padding: 1%;">
+            <strong>Current Data</strong>
+        </div>
+        <div class="grid-x  grid-margin-x small-up-1 medium-up-1 large-up-1" style="">
+
+            <div class="cell text-center">
+                <div class="">@Model.Title</div>
+                <div class="">
+                    <img src="https://placehold.jp/280x250.png">
+                </div>
+                <div class="">@Model.Description</div>
+            </div>
+        </div>
+    </div>
 </div>

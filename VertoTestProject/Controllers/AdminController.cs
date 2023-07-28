@@ -30,8 +30,10 @@ namespace VertoTestProject.Controllers
         //Method that runs when Edit page is requested
         public IActionResult Edit(int id)
         {
-            ViewData["id"] = id;
-            return View();
+            var contentItem = _service.GetContentById(id);
+            
+            //ViewData["id"] = id;
+            return View(contentItem);
         }
 
 

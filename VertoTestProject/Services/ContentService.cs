@@ -1,4 +1,6 @@
-﻿using VertoTestProject.Data;
+﻿using System.Data;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using VertoTestProject.Data;
 using VertoTestProject.Models;
 
 namespace VertoTestProject.Services
@@ -12,20 +14,33 @@ namespace VertoTestProject.Services
         private readonly ContentContext _context = default!;
 
         //Inject the ContentContext class
-        public ContentService(ContentContext context) 
-        { 
+        public ContentService(ContentContext context)
+        {
             _context = context;
         }
 
         //Method to retrive all content from database
         public IList<Content> GetContent()
         {
-            if(_context.Contents != null)//If content exists in the database
+            if (_context.Contents != null)//If content exists in the database
             {
                 return _context.Contents.ToList();//Rertrive content from the database
             }
             return new List<Content>();//Else return an empty list of type Content
         }
+
+        public Content GetContentById(int id)
+        {
+            if (_context.Contents != null)
+            {
+                Content singleContent = _context.Contents.Find(id);
+                return singleContent;
+
+            }
+            return new Content();
+
+        }
+
 
     }
 }
