@@ -21,8 +21,12 @@
     outline: 2px dashed blue;
 }
 
-divv {
-    outline: 2px dashed blue;
+div {
+    outline: 1px dashed red;
+}
+
+a {
+    outline: 1px dashed red;
 }
 
 header {
@@ -39,4 +43,9 @@ input {
 
 .header-image {
     padding-top: 1%;
+    padding-bottom: 1%;
 }
+
+.nav-text {
+    top: 10px;
+} 
