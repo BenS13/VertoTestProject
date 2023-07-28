@@ -16,14 +16,16 @@
     <!--Apply a container to control width of content after big image-->
     <div class="grid-container" style="max-width :1280px;">
         <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
-        <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+        <div class="grid-x  grid-margin-x small-up-1 medium-up-2 large-up-4" style="padding-bottom: 1%">
             @foreach (var item in Model)
             {
                 @if (item.Title != "Special Offers" & item.Title != "Product Categories")
                 {
-                    <div class="cell auto">
+                    <div class="cell">
                         <div class="">@item.Title</div>
-                        <div class="">@item.ImageURL</div>
+                        <div class="">
+                            <img src="https://placehold.jp/250x200.png">
+                        </div>
                         <div class="">@item.Description</div>
                         <a class="button" asp-area="" asp-controller="" asp-action="">@item.Title</a>
                     </div>
@@ -31,35 +33,30 @@
                 
             }
         </div>
-        
-        <!--3rd Row holds special offer deals-->
-        <div class="gird-y background-grey" style="padding-bottom: 1%">
-        
-            <div class="cell auto large-offset-5">
-                Special Offers
-            </div>
 
-            <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+        <div class="grid-container background-grey" style="max-width :1280px; padding: 1%">
+            <div class="grid-x  grid-margin-x small-up-1 medium-up-1 large-up-3" style="">
                 @foreach (var offer in Model)
                 {
                     @if (offer.Title == "Special Offers")
                     {
-                        <div class="cell auto">
-                            <div class="">@offer.ImageURL</div>
+                        <div class="cell text-center">
+                            <div class="">
+                                <img src="https://placehold.jp/250x250.png">
+                            </div>
                             <div class="">@offer.Description</div>
                         </div>
                     }
+
                 }
             </div>
-
-            <div class="cell large-offset-5">
-                <a class="button" asp-area="" asp-controller="" asp-action="">All Offers</a>
-            </div>
         </div>
+        
+       
 
         <!--4th Row holds prdocut categories-->
         <div class="gird-y" style="padding-bottom: 1%">
-            <div class="cell auto large-offset-5">
+            <div class="cell text-center">
                 Product Categories
             </div>
 
