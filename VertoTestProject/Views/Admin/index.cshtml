@@ -29,6 +29,7 @@
             {
                 @if (item.Title != "Special Offers" & item.Title != "Product Categories")
                 {
+                    <!--Wrap each item in a link that goes to a page to edit that component/item-->
                     <a class="" asp-area="" asp-controller="Admin" asp-action="Edit" asp-route-id="@item.Id">
                     <div class="cell">
                         <div class="">@item.Title</div>
