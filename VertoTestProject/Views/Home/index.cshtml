@@ -16,7 +16,7 @@
     <!--Apply a container to control width of content after big image-->
     <div class="grid-container" style="max-width :1280px;">
         <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
-        <div class="grid-x  grid-margin-x small-up-1 medium-up-2 large-up-4" style="padding-bottom: 1%">
+        <div class="grid-x  grid-margin-x small-up-1 medium-up-2 large-up-4" style="padding: 5%">
             @foreach (var item in Model)
             {
                 @if (item.Title != "Special Offers" & item.Title != "Product Categories")
@@ -34,7 +34,11 @@
             }
         </div>
 
+        <!--3rd Row holds special offers-->
         <div class="grid-container background-grey" style="max-width :1280px; padding: 1%">
+            <div class="text-center" style="padding: 1%;">
+                Special Offers
+            </div>
             <div class="grid-x  grid-margin-x small-up-1 medium-up-1 large-up-3" style="">
                 @foreach (var offer in Model)
                 {
@@ -42,7 +46,7 @@
                     {
                         <div class="cell text-center">
                             <div class="">
-                                <img src="https://placehold.jp/250x250.png">
+                                <img src="https://placehold.jp/280x250.png">
                             </div>
                             <div class="">@offer.Description</div>
                         </div>
@@ -50,26 +54,31 @@
 
                 }
             </div>
+            <div class="text-center" style="padding: 1%;">
+            <a class="button" asp-area="" asp-controller="" asp-action="">View All Offers</a>
+            </div>
         </div>
         
        
 
-        <!--4th Row holds prdocut categories-->
-        <div class="gird-y" style="padding-bottom: 1%">
-            <div class="cell text-center">
+        <!--4th Row holds product categories-->
+        <div class="grid-container" style="max-width :1280px; padding: 5%">
+            <div class="text-center" style="padding: 1%;">
                 Product Categories
             </div>
-
-            <div class="grid-x  grid-margin-x" style="padding-bottom: 1%">
+            <div class="grid-x  grid-margin-x small-up-2 medium-up-2 large-up-4" style="">
                 @foreach (var category in Model)
                 {
                     @if (category.Title == "Product Categories")
                     {
-                        <div class="cell auto">
-                            <div class="">@category.ImageURL</div>
+                        <div class="cell text-center">
+                            <div class="">
+                                <img src="https://placehold.jp/250x250.png">
+                            </div>
                             <div class="">@category.Description</div>
                         </div>
                     }
+
                 }
             </div>
         </div>
