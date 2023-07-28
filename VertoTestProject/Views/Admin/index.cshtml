@@ -1,11 +1,9 @@
 ﻿@model IList<VertoTestProject.Models.Content>;
 @{
-    ViewData["Title"] = "Manage Content";
+    ViewData["Title"] = "Admin - Manage Contents";
 }
 
-<div class="outline text-center">
-    ADMIN
-</div>
+
 
 <!--This page is a clone of the homepage, but components can be clicked on to edit them-->
 <!--Define a vertical grid for the content-->
@@ -19,6 +17,10 @@
         </div>
     </div>
 
+    <div class="outline text-center">
+        ADMIN PAGE
+    </div>
+
     <!--Apply a container to control width of content after big image-->
     <div class="grid-container" style="max-width :1280px;">
         <!--2nd Row holds Title, Image and Button to New Products, Field Events, Latest News ect.-->
@@ -27,6 +29,7 @@
             {
                 @if (item.Title != "Special Offers" & item.Title != "Product Categories")
                 {
+                    <a class="" asp-area="" asp-controller="Admin" asp-action="Edit" asp-route-id="@item.Id">
                     <div class="cell">
                         <div class="">@item.Title</div>
                         <div class="">
@@ -35,6 +38,7 @@
                         <div class="">@item.Description</div>
                         <a class="button" asp-area="" asp-controller="" asp-action="">@item.Title</a>
                     </div>
+                    </a>
                 }
 
             }

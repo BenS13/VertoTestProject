@@ -28,8 +28,9 @@ namespace VertoTestProject.Controllers
         }
 
         //Method that runs when Edit page is requested
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
+            ViewData["id"] = id;
             return View();
         }
 
