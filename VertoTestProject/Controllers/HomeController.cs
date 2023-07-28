@@ -24,7 +24,7 @@ namespace VertoTestProject.Controllers
 
         public IActionResult Index()
         {
-            IList<Content> ContentList = _service.GetContent();
+            ContentList = _service.GetContent();
 
             return View(ContentList);
         }

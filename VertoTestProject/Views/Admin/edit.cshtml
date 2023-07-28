@@ -1,11 +1,12 @@
-﻿@model VertoTestProject.Models.Content;
+﻿
 @{
     ViewData["Title"] = "Admin - Edit";
 }
 
 <div class="grid-y">
     <!--Current data inside selected compontent-->
-    <div class="grid-container" style="max-width :1125px; padding: 1%">
+    <br />
+    <div class="grid-container background-grey" style="max-width :1125px; padding: 1%">
         <div class="text-center" style="padding: 1%;">
             <strong>Current Data</strong>
         </div>
@@ -18,6 +19,23 @@
                 </div>
                 <div class="">@Model.Description</div>
             </div>
+        </div>
+    </div>
+
+    <!--Form to edit data for chosen component-->
+    <div class="grid-container" style="max-width :1125px; padding: 1%">
+        <div class="text-center" style="padding: 1%;">
+            <strong>New Dataa</strong>
+        </div>
+        <div class="grid-x  grid-margin-x small-up-1 medium-up-1 large-up-1" style="">
+            <form method="post">
+            <div class="cell text-center">
+                    <input  class="" type="text" placeholder="New Title/Category" />
+                <input class="" type="text" placeholder="New Image"/>
+                <input class="" type="text" placeholder="New Description"/>
+                <input type="submit" value="Update" class=""/>
+            </div>
+            </form>
         </div>
     </div>
 </div>

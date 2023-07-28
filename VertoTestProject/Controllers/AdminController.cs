@@ -13,6 +13,16 @@ namespace VertoTestProject.Controllers
         //Define a list to store the contents
         public IList<Content> ContentList { get; set; } = default!;
 
+        //Content object ContentItem that stores singular item requested for editing
+
+        [BindProperty]
+        public Content ContentItem { get; set; } = default!;
+
+        //Content object that stores the updated content of a component
+
+        [BindProperty]
+        public Content UpdateContent { get; set; } = default!;
+
         //Inject the ContentService into the controller
         public AdminController(ContentService service)
         {
@@ -30,10 +40,10 @@ namespace VertoTestProject.Controllers
         //Method that runs when Edit page is requested
         public IActionResult Edit(int id)
         {
-            var contentItem = _service.GetContentById(id);
+            ContentItem = _service.GetContentById(id);
             
             //ViewData["id"] = id;
-            return View(contentItem);
+            return View(ContentItem);
         }
 
 
